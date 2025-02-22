@@ -24,6 +24,7 @@ function createGrid (side) {
         square.addEventListener("mouseenter", () => {
             square.classList.add("squareHover", "squareColor");
             square.classList.remove("squareRemoveBorder");
+            square.style.backgroundColor = `${randomRGB()}`
         });
         square.addEventListener("mouseleave", () => {
             square.classList.remove("squareHover");
@@ -49,8 +50,15 @@ function newGrid () {
     }
 }
 
+function randomRGB() {
+    let r = Math.floor(Math.random() * 256) 
+    let g = Math.floor(Math.random() * 256) 
+    let b = Math.floor(Math.random() * 256) 
+
+    return `rgb(${r}, ${g}, ${b})`;
+}
+
 // Default grid
 createGrid(16);
 
 newGridBtn.addEventListener("click", newGrid)
-  
