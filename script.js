@@ -1,6 +1,10 @@
 const container = document.querySelector(".container");
 const containerWidth = +window.getComputedStyle(container).width.replace("px", "")
-const newGridBtn = document.querySelector(".newGridBtn");
+const newGridBtn = document.querySelector("#newGridBtn");
+const randomColorBtn = document.querySelector("#randomColorBtn");
+const opacityBtn = document.querySelector("#opacityBtn");
+let randomColorBtnToggle = false;
+let opacityBtnToggle = false;
 
 // Create a side x side grid with mouse interactivity
 function createGrid (side) {
@@ -24,7 +28,16 @@ function createGrid (side) {
         square.addEventListener("mouseenter", () => {
             square.classList.add("squareHover", "squareColor");
             square.classList.remove("squareRemoveBorder");
-            square.style.backgroundColor = `${randomRGB()}`
+            if (randomColorBtnToggle) {
+                square.style.backgroundColor = `${randomRGB()}`
+            } else if (opacityBtnToggle === false) {
+                square.style.backgroundColor = "black";
+            }
+            if (opacityBtnToggle) {
+                square.style.opacity = (+square.style.opacity + 0.1);
+            } else {
+                square.style.opacity = 1;
+            }
         });
         square.addEventListener("mouseleave", () => {
             square.classList.remove("squareHover");
@@ -44,6 +57,8 @@ function newGrid () {
                 container.removeChild(container.firstChild);
                 }
                 createGrid(squaresPerSide);
+        } else if (squaresPerSide == false) {
+            return;
         } else {
             alert("Please enter a number between 2 and 100");
         }
@@ -58,7 +73,24 @@ function randomRGB() {
     return `rgb(${r}, ${g}, ${b})`;
 }
 
+function buttonToggle (btnToggle) {
+    if (btnToggle === false) {
+        btnToggle = true;        
+    } else {
+        btnToggle = false;
+    }
+    return btnToggle;
+}
+
 // Default grid
 createGrid(16);
 
 newGridBtn.addEventListener("click", newGrid)
+randomColorBtn.addEventListener("click", () => {
+    randomColorBtnToggle = buttonToggle(randomColorBtnToggle)
+    randomColorBtn.classList.toggle("buttonActive");
+});
+opacityBtn.addEventListener("click", () => {
+    opacityBtnToggle = buttonToggle(opacityBtnToggle)
+    opacityBtn.classList.toggle("buttonActive");
+});

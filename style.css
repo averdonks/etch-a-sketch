@@ -4,7 +4,7 @@
 }
 
 html {
-    margin-top: 96px;
+    margin-top: 80px;
 }
 
 h1 {
@@ -14,24 +14,29 @@ h1 {
     margin: 24px 0;
 }
 
-.newGridBtn {
+.buttons {
     display: flex;
-    margin: 0 auto 32px;
-    padding: 4px 20px;
+    justify-content: center;
+}
+
+button {
+    display: flex;
+    margin: 0 24px 32px;
+    padding: 4px 16px;
     border: solid 1px rgba(0, 0, 0, 0.4);
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     background-color: white;
 }
 
-.newGridBtn:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+.button:hover {
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
     transform: translateY(-1px);
 }
 
-.newGridBtn:active {
-    background-color: white;
+.button:active,
+.buttonActive {
+    background-color: rgba(0, 0, 0, 0.08);
     box-shadow: 0 0px 0px rgba(0, 0, 0, 0.4);
     transform: translateY(1px);
 }
@@ -39,11 +44,11 @@ h1 {
 .container {
     display: flex;
     margin: 0 auto;
-    width: 800px;
-    height: 800px;
+    width: 524px;
+    height: 524px;
     outline: groove 4px rgba(0, 0, 0, 0.4);
     flex-wrap: wrap;
-    box-shadow: 0 15px 15px grey;
+    box-shadow: 0 8px 16px grey;
 }
 
 .squareDefault {
@@ -55,7 +60,7 @@ h1 {
 }
 
 .squareColor {
-    background-color: blueviolet;
+    background-color: black;
 }
 
 .squareRemoveBorder {
