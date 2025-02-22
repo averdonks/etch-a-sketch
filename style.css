@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    margin: 100px auto;
+    width: 800px;
+    height: 800px;
+    outline: groove 4px rgba(0, 0, 0, 0.4);
+    flex-wrap: wrap;
+    box-shadow: 0 15px 15px grey;
+}
+
+.squareDefault {
+    border: solid 1px rgba(0, 0, 0, 0.1);
+}
