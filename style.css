@@ -3,6 +3,10 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+html {
+    margin-top: 96px;
+}
+
 h1 {
     display: flex;
     justify-content: center;
@@ -12,7 +16,7 @@ h1 {
 
 .newGridBtn {
     display: flex;
-    margin: 0 auto 24px;
+    margin: 0 auto 32px;
     padding: 4px 20px;
     border: solid 1px rgba(0, 0, 0, 0.4);
     border-radius: 4px;
@@ -23,11 +27,13 @@ h1 {
 .newGridBtn:hover {
     background-color: rgba(0, 0, 0, 0.1);
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 }
 
 .newGridBtn:active {
     background-color: white;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.4);
+    transform: translateY(1px);
 }
 
 .container {
