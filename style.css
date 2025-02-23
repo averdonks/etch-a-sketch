@@ -44,8 +44,8 @@ button {
 .container {
     display: flex;
     margin: 0 auto;
-    width: 524px;
-    height: 524px;
+    width: 600px;
+    height: 600px;
     outline: groove 4px rgba(0, 0, 0, 0.4);
     flex-wrap: wrap;
     box-shadow: 0 8px 16px grey;
