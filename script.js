@@ -33,7 +33,7 @@ function createGrid (side) {
             } else if (opacityBtnToggle === false) {
                 square.style.backgroundColor = "black";
             }
-            if (opacityBtnToggle) {
+            if (opacityBtnToggle && square.style.opacity < 1) {
                 square.style.opacity = (+square.style.opacity + 0.1);
             } else {
                 square.style.opacity = 1;
