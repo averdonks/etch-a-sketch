@@ -18,7 +18,7 @@ function createGrid (side) {
         for (let i = 0; i < side; i++) {
             let square = document.createElement("div");
             square.classList.add("squareDefault");
-            square.setAttribute(`style`, `width: ${containerWidth / side}; height: ${containerWidth / side};`);
+            square.setAttribute(`style`, `width: ${containerWidth / side}px; height: ${containerWidth / side}px;`);
             addSquareEvents(square);
             container.appendChild(square);
         }
