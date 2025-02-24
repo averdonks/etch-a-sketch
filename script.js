@@ -1,5 +1,5 @@
 const container = document.querySelector(".container");
-const containerWidth = +window.getComputedStyle(container).width.replace("px", "")
+const containerWidth = +window.getComputedStyle(container).width.replace("px", "");
 const newGridBtn = document.querySelector("#newGridBtn");
 const randomColorBtn = document.querySelector("#randomColorBtn");
 const opacityBtn = document.querySelector("#opacityBtn");
@@ -29,7 +29,7 @@ function createGrid (side) {
             square.classList.add("squareHover", "squareColor");
             square.classList.remove("squareRemoveBorder");
             if (randomColorBtnToggle) {
-                square.style.backgroundColor = `${randomRGB()}`
+                square.style.backgroundColor = `${randomRGB()}`;
             } else if (opacityBtnToggle === false) {
                 square.style.backgroundColor = "black";
             }
@@ -66,9 +66,9 @@ function newGrid () {
 }
 
 function randomRGB() {
-    let r = Math.floor(Math.random() * 256) 
-    let g = Math.floor(Math.random() * 256) 
-    let b = Math.floor(Math.random() * 256) 
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
 
     return `rgb(${r}, ${g}, ${b})`;
 }
@@ -87,10 +87,10 @@ createGrid(16);
 
 newGridBtn.addEventListener("click", newGrid)
 randomColorBtn.addEventListener("click", () => {
-    randomColorBtnToggle = buttonToggle(randomColorBtnToggle)
+    randomColorBtnToggle = buttonToggle(randomColorBtnToggle);
     randomColorBtn.classList.toggle("buttonActive");
 });
 opacityBtn.addEventListener("click", () => {
-    opacityBtnToggle = buttonToggle(opacityBtnToggle)
+    opacityBtnToggle = buttonToggle(opacityBtnToggle);
     opacityBtn.classList.toggle("buttonActive");
 });
